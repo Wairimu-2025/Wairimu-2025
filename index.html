@@ -3,238 +3,228 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ann Wairimu Kiarie | Data Analyst & Machine Learning</title>
+<title>Ann Wairimu K. | Data Portfolio</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-:root{
-  --bg-dark:#1e1e1e;
-  --text-light:#f4f4f4;
-  --accent:#5e548e;
-  --accent-light:#b8a9c9;
-  --card-bg:#2b2b2b;
-  --highlight:#b39ddb;
-}
-body{
-  margin:0;
-  font-family:"Poppins", sans-serif;
-  background:var(--bg-dark);
-  color:var(--text-light);
-  transition:0.5s;
-}
-header{
-  text-align:center;
-  padding:2rem 1rem;
-  background:var(--card-bg);
-  border-bottom:3px solid var(--accent);
-}
-header img{
-  width:130px;
-  height:130px;
-  border-radius:50%;
-  border:3px solid var(--accent);
-  box-shadow:0 0 10px var(--accent);
-}
-header h1{margin:1rem 0 0.3rem; font-size:1.8rem; color:var(--accent-light);}
-header p{margin:0.3rem 0; font-size:1rem;}
-.btn{
-  display:inline-block;
-  background:var(--accent);
-  color:white;
-  padding:0.6rem 1.2rem;
-  margin-top:0.5rem;
-  border-radius:25px;
-  text-decoration:none;
-  transition:0.3s;
-}
-.btn:hover{background:var(--accent-light);}
-.btn.project{
-  background:var(--highlight);
-  color:#1e1e1e;
-  font-weight:600;
-  box-shadow:0 0 8px var(--highlight);
-}
-.btn.project:hover{
-  background:white;
-  box-shadow:0 0 12px white;
-}
-section{padding:2rem 1rem; max-width:900px; margin:auto;}
-h2{text-align:center; color:var(--accent-light); margin-bottom:1rem;}
-.projects{display:grid; grid-template-columns:1fr; gap:1.2rem;}
-.project{
-  background:var(--card-bg);
-  border-left:4px solid var(--accent);
-  padding:1rem;
-  border-radius:10px;
-  transition:transform 0.3s;
-  position:relative;
-}
-.project:hover{transform:translateY(-5px);}
-.project .details{
-  display:none;
-  margin-top:0.7rem;
-  background:#3a2f45;
-  padding:0.8rem;
-  border-radius:6px;
-  font-size:0.9rem;
-  color:#eee;
-}
-.skills{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:0.8rem;
-}
-.skill{
-  background:var(--accent);
-  color:white;
-  border-radius:50px;
-  padding:0.6rem 1.2rem;
-  font-size:0.9rem;
-  animation:pop 3s infinite ease-in-out;
-}
-@keyframes pop{0%,100%{transform:scale(1);}50%{transform:scale(1.1);}}
-.edu,.cert{
-  background:var(--card-bg);
-  border-left:4px solid var(--accent);
-  padding:1rem;
-  border-radius:10px;
-  margin-bottom:1rem;
-}
-.socials{text-align:center; margin:2rem 0;}
-.socials a{
-  color:var(--accent-light);
-  margin:0 0.7rem;
-  font-size:1.5rem;
-  transition:0.3s;
-}
-.socials a:hover{color:var(--accent);}
-[data-animate]{opacity:0; transform:translateY(20px); transition:all 0.8s ease;}
-[data-animate].visible{opacity:1; transform:translateY(0);}
-.theme-toggle{
-  position:fixed;
-  top:15px;
-  right:15px;
-  background:var(--accent);
-  color:white;
-  border:none;
-  border-radius:50%;
-  width:40px;
-  height:40px;
-  cursor:pointer;
-  font-size:1.2rem;
-  box-shadow:0 0 8px var(--accent-light);
-}
+  :root {
+    --accent: #8458B3;      /* Deep lilac - visible in both themes */
+    --soft-bg: #f6f4fa;
+    --text-dark: #2c2c2c;
+    --text-light: #f1f1f1;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: var(--soft-bg);
+    color: var(--text-dark);
+    margin: 0;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  header {
+    background: var(--accent);
+    color: white;
+    text-align: center;
+    padding: 30px 15px 25px;
+  }
+  header img {
+    width: 90px; height: 90px;
+    border-radius: 50%;
+    border: 3px solid white;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  header h1 { font-size: 1.6rem; margin: 8px 0; }
+  header p { margin: 3px 0; font-size: 0.95rem; }
+
+  .socials a {
+    color: white;
+    font-size: 1.2rem;
+    margin: 0 8px;
+    transition: opacity 0.2s;
+  }
+  .socials a:hover { opacity: 0.8; }
+
+  section {
+    max-width: 850px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+  h2 {
+    color: #2c2c2c; 
+    border-bottom: 2px solid var(--accent);
+    font-size: 1.3rem;
+    padding-bottom: 4px;
+    margin-bottom: 15px;
+  }
+
+  .card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: background 0.3s, color 0.3s;
+  }
+  .card h3 { margin: 0; color: var(--accent); font-size: 1.05rem; }
+  .card p { margin: 5px 0; font-size: 0.92rem; }
+  .btn {
+    background: var(--accent);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  .toggle-details {
+    background: none; border: none; color: var(--accent);
+    cursor: pointer; font-weight: 600; font-size: 0.9rem; padding: 3px 0;
+  }
+  .details {
+    display: none;
+    margin-top: 8px;
+    background: #eeeaf6;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+  }
+
+  .bubble-container {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
+  }
+  .bubble {
+    background: var(--accent);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    display: flex; align-items: center; gap: 6px;
+    animation: float 3s ease-in-out infinite;
+  }
+  @keyframes float { 0%,100%{transform:translateY(0);}50%{transform:translateY(-3px);} }
+
+  footer {
+    background: var(--accent);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.85rem;
+  }
+
+  /* Dark Mode */
+  .dark-mode {
+    background: #1e1e1e;
+    color: var(--text-light);
+  }
+  .dark-mode .card { background: #2a2a2a; }
+  .dark-mode .details { background: #3a2f45; }
+  .dark-mode a { color: #d5baff; }
+  .dark-mode header, .dark-mode footer { background: #623c8a; }
+
+  /* Floating button */
+  #themeToggle {
+    position: fixed;
+    bottom: 15px; right: 15px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 12px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
 </style>
 </head>
 <body>
-<button class="theme-toggle" onclick="toggleTheme()">☀️</button>
-
-<header>
-  <img src="Ann_prof_photo.jpg" alt="Ann Wairimu">
-  <h1>Ann Wairimu</h1>
-  <p>Data Analyst | Machine Learning</p>
-  <p>Email: anniekiarie07@gmail.com</p>
-  <a href="resume.pdf" class="btn" target="_blank">📄 Download Resume</a>
-  <div class="socials">
-    <a href="https://linkedin.com/ann-k-networking" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/Wairimu-2025" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="mailto:anniekiarie@mail.com"><i class="fas fa-envelope"></i></a>
-  </div>
-</header>
-
-<section id="projects" data-animate>
-  <h2>Projects</h2>
-  <div class="projects">
-    <div class="project">
-      <h3>🏠 House Price Prediction</h3>
-      <p>Predictive model estimating house prices using key market features.</p>
-      <button class="btn" onclick="toggleDetails(this)">View More</button>
-      <div class="details">
-        <p><strong>Overview:</strong> Analyzed housing dataset to identify factors affecting price variability, built regression models with engineered features to predict prices.</p>
-        <p><strong>Tools Used:</strong> Python (Pandas, Scikit-learn, LinearRegression), Google Colab</p>
-        <p><strong>Findings / Insights:</strong> Key drivers were square footage, location, and number of rooms; model achieved R² score of 0.92, enabling accurate market estimates.</p>
-      </div>
-      <a href="#" class="btn project" target="_blank">View Project</a>
+  <header>
+    <img src="Ann_prof_photo.jpg" alt="Ann Kiarie">
+    <h1>Ann Wairimu K.</h1>
+    <p>Data Analyst | Machine Learning Enthusiast</p>
+    <div class="socials">
+      <a href="mailto:anniekiarie07@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/ann-k-networking" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/Wairimu-2025" target="_blank"><i class="fab fa-github"></i></a>
     </div>
-  </div>
-</section>
+  </header>
 
-<section id="skills" data-animate>
-  <h2>Skills & Tools</h2>
-  <div class="skills">
-    <div class="skill">Excel</div>
-    <div class="skill">SQL</div>
-    <div class="skill">Machine Learning</div>
-    <div class="skill">Statistics</div>
-    <div class="skill">Power BI</div>
-  </div>
-</section>
+  <section id="projects">
+    <h2>🚀 Featured Projects</h2>
+    <div class="card">
+      <h3>🏠 House Price Prediction</h3>
+      <p>ML model predicting house prices using key market features.</p>
+      <button class="toggle-details">📘 Read More</button>
+      <div class="details">
+        <p><strong>Overview:</strong> Analyzed housing data for key factors.</p>
+        <p><strong>Findings:</strong> Area was top predictors.</p>
+        <p><strong>Insights:</strong> Helped price properties fairly r^2 0.92 (92% accuracy).</p>
+      </div>
+      <a href="https://github.com/Wairimu-2025/house-price-prediction" class="btn" target="_blank">🔗 GitHub</a>
+    </div>
 
-<section id="education" data-animate>
-  <h2>Education</h2>
-  <div class="edu">
-    <h3>B.Sc. Statistics</h3>
-    <p>University of Nairobi | 2019–2023</p>
-  </div>
-</section>
-
-<section id="certifications" data-animate>
-  <h2>Certifications</h2>
-  <div class="cert">
-    <p>CyberShujaa Data & AI Certificate</p>
     
-  </div>
-</section>
 
-<script>
-function toggleTheme(){
-  document.body.classList.toggle("light-mode");
-  if(document.body.classList.contains("light-mode")){
-    document.body.style.backgroundColor="#f4f4f4";
-    document.body.style.color="#222";
-  }else{
-    document.body.style.backgroundColor="#1e1e1e";
-    document.body.style.color="#f4f4f4";
-  }
-}
-function toggleDetails(btn){
-  const details=btn.nextElementSibling;
-  if(details.style.display==="block"){
-    details.style.display="none";
-    btn.textContent="View More";
-  }else{
-    details.style.display="block";
-    btn.textContent="Hide Details";
-  }
-}
-document.addEventListener("scroll",()=>{
-  document.querySelectorAll("[data-animate]").forEach(el=>{
-    const rect=el.getBoundingClientRect();
-    if(rect.top<window.innerHeight-100) el.classList.add("visible");
-  });
-});
-<footer style="background: #2b2b2b; text-align: center; padding: 1rem; margin-top:2rem; border-top: 2px solid #5e548e;">
-  <p style="margin:0; color:#b8a9c9;">© 2025 Ann Wairimu | All rights reserved</p>
-  <div class="socials" style="margin-top:0.5rem;">
-    <a href="https://linkedin.com/in/ann-K-NETWORKING" target="_blank" style="color:#b8a9c9; margin:0 0.7rem; font-size:1.5rem; transition:0.3s;">
-      <i class="fab fa-linkedin"></i>
-    </a>
-    <a href="https://github.com/Wairimu-2025" target="_blank" style="color:#b8a9c9; margin:0 0.7rem; font-size:1.5rem; transition:0.3s;">
-      <i class="fab fa-github"></i>
-    </a>
-    <a href="mailto:anniekiarie@gmail.com" style="color:#b8a9c9; margin:0 0.7rem; font-size:1.5rem; transition:0.3s;">
-      <i class="fas fa-envelope"></i>
-    </a>
-  </div>
-</footer>
+    
+  </section>
 
-<script>
-  // Hover effect for footer icons
-  document.querySelectorAll('footer .socials a').forEach(icon => {
-    icon.addEventListener('mouseenter', () => icon.style.color = '#ffffff');
-    icon.addEventListener('mouseleave', () => icon.style.color = '#b8a9c9');
-  });
-</script>
+  <section id="skills">
+    <h2>🧰 Tools & Skills</h2>
+    <div class="bubble-container">
+      <div class="bubble"><i class="fas fa-chart-column"></i> Power BI</div>
+      <div class="bubble"><i class="fa-solid fa-file-excel"></i> Excel</div>
+      <div class="bubble"><i class="fa-solid fa-database"></i> SQL</div>
+      <div class="bubble"><i class="fa-brands fa-python"></i> Python</div>
+      <div class="bubble"><i class="fa-solid fa-robot"></i> Machine Learning</div>
+      <div class="bubble"><i class="fa-solid fa-signal"></i> Statistics</div>
+    </div>
+  </section>
 
+  <section id="education">
+    <h2>🎓 Education</h2>
+    <div class="card">
+      <h3>B.Sc. Statistics</h3>
+      <p>University of Nairobi | 2019–2023</p>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <h2>🏅 Certifications</h2>
+    <div class="card">
+      <ul>
+        <li>CyberShujaa Data & AI Certificate</li>
+        
+      </ul>
+    </div>
+  </section>
+
+  <section id="resume">
+    <h2>📄 Resume</h2>
+    <p>Resume coming soon — currently being updated.</p>
+    <a href="#" class="btn" style="background: gray; cursor: not-allowed;">🚧 Coming Soon</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Ann Wairimu K | Annlytics | Beyond the Dataset 💜 via GitHub Pages</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Read More toggle
+    document.querySelectorAll('.toggle-details').forEach(btn=>{
+      btn.onclick=()=>{
+        const d=btn.nextElementSibling;
+        d.style.display=d.style.display==='block'?'none':'block';
+        btn.textContent=d.style.display==='block'?'📕 Hide':'📘 Read More';
+      };
+    });
+
+    // Theme toggle
+    const toggle=document.createElement('button');
+    toggle.id='themeToggle';
+    toggle.textContent='🌙 Dark Mode';
+    toggle.onclick=()=>{
+      document.body.classList.toggle('dark-mode');
+      toggle.textContent=document.body.classList.contains('dark-mode')?'☀️ Light Mode':'🌙 Dark Mode';
+    };
+    document.body.appendChild(toggle);
+  </script>
 </body>
 </html>
