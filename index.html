@@ -1,273 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ann Wairimu Kiarie | Data Portfolio</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9f5fb;
-      color: #333;
-      margin: 0;
-      line-height: 1.6;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ann Wairimu Kiarie | Data Portfolio</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  :root {
+    --accent: #7e57c2;  /* deep lilac */
+    --soft-bg: #f5f3fa;
+    --text-dark: #232323;
+    --text-light: #f2f2f2;
+  }
 
-    header {
-      background-color: #d8b4e2;
-      color: #fff;
-      text-align: center;
-      padding: 50px 20px;
-    }
+  body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: var(--soft-bg);
+    color: var(--text-dark);
+    margin: 0;
+    transition: background 0.3s, color 0.3s;
+    scroll-behavior: smooth;
+  }
 
-    header img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid white;
-      margin-bottom: 10px;
-    }
+  header {
+    background: var(--accent);
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+  }
+  header img {
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    border: 3px solid white;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  header h1 { font-size: 1.5rem; margin: 5px 0; }
+  header p { margin: 3px 0 8px; font-size: 0.95rem; }
 
-    header h1 {
-      font-size: 2rem;
-      margin: 10px 0;
-    }
+  .socials a {
+    font-size: 1.4rem;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+  }
+  .socials a:hover { transform: scale(1.2); }
+  .fa-linkedin { color: #0077b5; }
+  .fa-github { color: #181717; }
+  .fa-envelope { color: #d93025; }
 
-    header p {
-      margin: 5px 0;
-    }
+  section {
+    max-width: 850px;
+    margin: 25px auto;
+    padding: 0 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+  }
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  h2 {
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+    font-size: 1.2rem;
+    padding-bottom: 4px;
+    margin-bottom: 15px;
+  }
 
-    section {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
+  .card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  }
+  .card h3 { margin: 0; color: var(--accent); font-size: 1.05rem; }
+  .card p { margin: 5px 0; font-size: 0.9rem; }
 
-    h2 {
-      color: #7b3b8c;
-      border-bottom: 3px solid #e0c4f2;
-      padding-bottom: 5px;
-    }
+  .btn {
+    background: var(--accent);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
 
-    .btn {
-      display: inline-block;
-      background: #b37fb3;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 10px;
-      text-decoration: none;
-      margin-top: 10px;
-    }
+  .toggle-details {
+    background: none; border: none; color: var(--accent);
+    cursor: pointer; font-weight: 600; font-size: 0.9rem; padding: 3px 0;
+  }
+  .details {
+    display: none;
+    margin-top: 8px;
+    background: #eeeaf6;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+  }
 
-    .project-card, .edu-card, .cert-card, .skill-card {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      margin: 15px 0;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
+  .bubble-container {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
+  }
+  .bubble {
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    display: flex; align-items: center; gap: 6px;
+    animation: float 3s ease-in-out infinite;
+    color: white;
+  }
+  .powerbi { background: #f2c811; color: #3a2f00; }
+  .excel { background: #217346; }
+  .sql { background: #00758f; }
+  .python { background: #3776ab; }
+  .ml { background: #ea4c89; }
+  .stats { background: #ff8c00; }
 
-    .bubble-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-      margin-top: 20px;
-    }
+  @keyframes float { 0%,100%{transform:translateY(0);}50%{transform:translateY(-3px);} }
 
-    .bubble {
-      background: #e3c6f7;
-      padding: 10px 15px;
-      border-radius: 50px;
-      animation: float 3s ease-in-out infinite;
-    }
+  footer {
+    background: var(--accent);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.85rem;
+  }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
+  /* Dark Mode */
+  .dark-mode { background: #1e1e1e; color: var(--text-light); }
+  .dark-mode .card { background: #2a2a2a; }
+  .dark-mode .details { background: #3a2f45; }
+  .dark-mode header, .dark-mode footer { background: #623c8a; }
 
-    /* Read More Section */
-    .details {
-      display: none;
-      margin-top: 10px;
-      background: #f6eff7;
-      padding: 10px;
-      border-radius: 8px;
-    }
-    .details h4 {
-      margin-bottom: 5px;
-      color: #7b3b8c;
-    }
-    .toggle-details {
-      background: none;
-      border: none;
-      color: #7b3b8c;
-      cursor: pointer;
-      font-weight: bold;
-      margin-bottom: 8px;
-    }
-
-    /* Resume */
-    #resume {
-      background-color: #f6eff7;
-      border-radius: 20px;
-      padding: 40px 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #d8b4e2;
-      color: white;
-      margin-top: 40px;
-    }
-
-    /* Dark Mode */
-    .dark-mode {
-      background-color: #1e1e1e;
-      color: #eee;
-    }
-
-    .dark-mode header {
-      background-color: #3b2640;
-    }
-
-    .dark-mode .btn {
-      background-color: #b37fb3;
-    }
-
-    .dark-mode .project-card, 
-    .dark-mode .edu-card, 
-    .dark-mode .cert-card, 
-    .dark-mode .skill-card {
-      background: #2a2a2a;
-      color: #eee;
-    }
-
-    .dark-mode footer {
-      background: #3b2640;
-    }
-
-    .dark-mode a { color: #d2a4ff; }
-
-  </style>
+  #themeToggle {
+    position: fixed;
+    bottom: 15px; right: 15px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 12px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+</style>
 </head>
 <body>
   <header>
     <img src="Ann_prof_photo.jpg" alt="Ann Kiarie Photo">
     <h1>Ann Wairimu Kiarie</h1>
-    <p>Data Analyst/Scientist | Machine Learning Enthusiast</p>
-    <p>📧 anniekiarie07@gmail.com</p>
+    <p>Data Analyst | Machine Learning Enthusiast</p>
+    <div class="socials">
+      <a href="mailto:anniekiarie@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/ann-k-networking" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/Wairimu-2025" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
   </header>
+
+  <section id="projects">
+    <h2>🚀 Featured Projects</h2>
+    <div class="card">
+      <h3>🏠 House Price Prediction</h3>
+      <p>ML model predicting house prices using key market features.</p>
+      <button class="toggle-details">📘 Read More</button>
+      <div class="details">
+        <p><strong>Overview:</strong> Analyzed housing data for key factors.</p>
+        <p><strong>Tools & Techniques:</strong> Puthon 3, Google Colab, pandas, numpy, scikit-learn, splitting data, model building, evaluation metrics, and and prediction.</p>
+        <p><strong>Findings:</strong> Area was the top predictor.</p>
+        <p><strong>Insights:</strong> Helped price properties fairly (92% accuracy).</p>
+      </div>
+      <a href="https://github.com/Wairimu-2025/house_price_prediction" class="btn" target="_blank">🔗 GitHub</a>
+    </div>
+
+   </section>
 
   <section id="skills">
     <h2>🧰 Tools & Skills</h2>
     <div class="bubble-container">
-      <div class="bubble">Power BI</div>
-      <div class="bubble">Excel</div>
-      <div class="bubble">SQL</div>
-      <div class="bubble">Python</div>
-      <div class="bubble">Machine Learning</div>
-      <div class="bubble">Statistics</div>
+      <div class="bubble powerbi"><i class="fas fa-chart-column"></i> Power BI</div>
+      <div class="bubble excel"><i class="fa-solid fa-file-excel"></i> Excel</div>
+      <div class="bubble sql"><i class="fa-solid fa-database"></i> SQL</div>
+      <div class="bubble python"><i class="fa-brands fa-python"></i> Python</div>
+      <div class="bubble ml"><i class="fa-solid fa-robot"></i> Machine Learning</div>
+      <div class="bubble stats"><i class="fa-solid fa-signal"></i> Statistics</div>
     </div>
   </section>
 
   <section id="education">
     <h2>🎓 Education</h2>
-    <div class="edu-card">
-      <h3>Bachelor of Science in Statistics</h3>
-      <p>University of Nairobi</p>
-      <p>2019 - 2023</p>
+    <div class="card">
+      <h3>B.Sc. Statistics</h3>
+      <p>University of Nairobi | 2020–2024</p>
     </div>
   </section>
 
   <section id="certifications">
     <h2>🏅 Certifications</h2>
-    <div class="cert-card">
-      <p>CyberShujaa Data and AI Certificate</p>
+    <div class="card">
+      <ul>
+        <li>CyberShujaa Data and AI Certification</li>
+        
+      </ul>
     </div>
-  </section>
-
-  <section id="projects">
-    <h2>🚀 Projects</h2>
-
-    <div class="project-card">
-      <h3>🏠 House Price Prediction</h3>
-      <p>Built a machine learning model using Python to predict house prices based on market features.</p>
-      <button class="toggle-details">📘 Read More</button>
-      <div class="details">
-        <h4>Overview</h4>
-        <p>Explored how variables like area, rooms, and location affect house prices.</p>
-        <h4>Findings</h4>
-        <p>Area was the most influential factors. Model achieved 92% accuracy.</p>
-        <h4>Insights</h4>
-        <p>Useful for real estate agents to estimate competitive pricing in dynamic markets.</p>
-      </div>
-      <a href="https://github.com/Wairimu-2025/house_price_prediction" class="btn" target="_blank">🔗 View on GitHub</a>
-    </div>
-
   </section>
 
   <section id="resume">
     <h2>📄 Resume</h2>
-    <p>My detailed resume will be uploaded soon. For now, feel free to explore my projects and skills or reach out via email.</p>
+    <p>Resume coming soon — currently being updated.</p>
     <a href="#" class="btn" style="background: gray; cursor: not-allowed;">🚧 Coming Soon</a>
   </section>
 
   <footer>
-    <p>© 2025 Ann Wairimu Kiarie | Annlytics | Beyond the Dataset 💜 </p>
+    <p>© 2025 Ann Kiarie | Annlytics | Beyond the DataSet 💜</p>
   </footer>
 
-  <!-- Scroll Animations -->
-  <script src="https://unpkg.com/scrollreveal"></script>
+  <!-- JS for animations & dark mode -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      ScrollReveal().reveal('.project-card, .edu-card, .cert-card, .skill-card, .bubble', { 
-        duration: 1000, 
-        distance: '30px',
-        easing: 'ease-in-out',
-        origin: 'bottom',
-        interval: 150
-      });
+    // Toggle project details
+    document.querySelectorAll('.toggle-details').forEach(btn=>{
+      btn.onclick=()=>{
+        const d=btn.nextElementSibling;
+        d.style.display=d.style.display==='block'?'none':'block';
+        btn.textContent=d.style.display==='block'?'📕 Hide':'📘 Read More';
+      };
     });
-  </script>
 
-  <!-- Read More Toggle -->
-  <script>
-    const toggles = document.querySelectorAll('.toggle-details');
-    toggles.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const details = btn.nextElementSibling;
-        details.style.display = details.style.display === 'block' ? 'none' : 'block';
-        btn.textContent = details.style.display === 'block' ? '📕 Hide Details' : '📘 Read More';
+    // Fade in sections on scroll
+    const sections=document.querySelectorAll('section');
+    const reveal=()=>{
+      sections.forEach(sec=>{
+        const top=sec.getBoundingClientRect().top;
+        if(top<window.innerHeight-80) sec.classList.add('visible');
       });
-    });
-  </script>
+    };
+    window.addEventListener('scroll', reveal);
+    reveal();
 
-  <!-- Dark Mode Toggle -->
-  <script>
-    const body = document.body;
-    const toggle = document.createElement("button");
-    toggle.textContent = "🌙 Dark Mode";
-    toggle.style.position = "fixed";
-    toggle.style.bottom = "20px";
-    toggle.style.right = "20px";
-    toggle.style.padding = "10px 15px";
-    toggle.style.background = "#c8a2c8";
-    toggle.style.color = "white";
-    toggle.style.border = "none";
-    toggle.style.borderRadius = "8px";
-    toggle.style.cursor = "pointer";
-    toggle.style.boxShadow = "0 4px 10px rgba(0,0,0,0.2)";
-    toggle.onclick = () => {
-      body.classList.toggle("dark-mode");
-      toggle.textContent = body.classList.contains("dark-mode") ? "☀️ Light Mode" : "🌙 Dark Mode";
+    // Dark mode toggle
+    const toggle=document.createElement('button');
+    toggle.id='themeToggle';
+    toggle.textContent='🌙 Dark Mode';
+    toggle.onclick=()=>{
+      document.body.classList.toggle('dark-mode');
+      toggle.textContent=document.body.classList.contains('dark-mode')?'☀️ Light Mode':'🌙 Dark Mode';
     };
     document.body.appendChild(toggle);
   </script>
-
 </body>
 </html>
