@@ -1,39 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ann Kiarie | Data Science Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body { font-family: 'Segoe UI', sans-serif; background: #f8f9fa; color: #333; margin: 0; padding: 20px; }
-    header { text-align: center; padding: 40px 0; }
-    h1 { color: #0066cc; margin-bottom: 5px; }
-    h2 { color: #333; }
-    .container { max-width: 900px; margin: 0 auto; }
-    .project { background: #fff; padding: 20px; border-radius: 10px; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-    a { color: #0066cc; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      margin: 0;
+    }
+
+    header {
+      background: linear-gradient(135deg, #007bff, #00c6ff);
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1em;
+      opacity: 0.9;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      color: #007bff;
+      border-left: 5px solid #007bff;
+      padding-left: 10px;
+      margin-bottom: 20px;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      transition: transform 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card h3 {
+      margin-top: 0;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 8px 16px;
+      background: #007bff;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background: #0056b3;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: #222;
+      color: #bbb;
+      margin-top: 50px;
+    }
+
+    footer a {
+      color: #00c6ff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Ann Wairimu</h1>
+    <h1>Ann Kiarie</h1>
     <p>Data Scientist | Machine Learning | Visualization</p>
   </header>
 
   <div class="container">
-    <h2>My Projects</h2>
+    <h2>💼 Featured Projects</h2>
 
-    <div class="project">
+    <div class="project-card">
       <h3>🏠 House Price Prediction</h3>
-      <p>Predicting housing prices using linear regression and feature engineering.</p>
-      <a href="https://github.com/Wairimu-2025/house_price_prediction">View Project →</a>
+      <p>Predicting housing prices using regression models and feature engineering.</p>
+      <a href="https://github.com/Wairimu-2025/house_price_prediction" class="btn">View Project</a>
     </div>
 
-   
 
-    <h2>About Me</h2>
-    <p>I’m passionate about turning data into insights through analytics and machine learning.</p>
-    <p>📧 <a href="anniekiarie07@gmail.com">anniekiarie07@gmail.com</a></p>
+    <h2>👩🏽‍💻 About Me</h2>
+    <p>I’m a passionate data scientist who loves transforming data into insights that drive decisions. 
+       I enjoy building models, dashboards, and stories that make data come alive.</p>
+
+    <h2>📬 Contact</h2>
+    <p>Email: <a href="mailto:anniekiarie07@gmail.com">anniekiarie@gmail.com</a></p>
+    <p>LinkedIn: <a href="#">linkedin.com/in/ann-k-networking</a></p>
   </div>
+
+  <footer>
+    © 2025 Ann Kiarie | Built with ❤️ using GitHub Pages
+  </footer>
 </body>
 </html>
